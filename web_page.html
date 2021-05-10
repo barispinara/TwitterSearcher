@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter</title>
+</head>
+<body>
+    <input type = "file" name="inputfile" id="inputfile">
+    <br>
+    <pre id="output"></pre>
+    <script type="text/javascript">
+        document.getElementById('inputfile').addEventListener('change' , function(){
+            var fr = new FileReader();
+            fr.onload = function(){
+                document.getElementById('output').textContent=fr.result;
+            }
+            fr.readAsText(this.files[0]);
+        })
+    </script>
+</body>
+</html>
